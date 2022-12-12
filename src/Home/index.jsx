@@ -63,27 +63,28 @@ function Tweet({ name, username, avatar, children }) {
   );
 }
 
-const Home = () => {
-  const token = '';
+const Home = ({ loggedInUser }) => {
+  const [data, setData] = useState([])
 
   async function getData() {
     const res = await axios.get("http://localhost:9901/tweets", {
       headers: {
-        'authorization': `Bearer ${token}`
+        'authorization': `Bearer ${loggedInUser.acessToken}`
       }
-    });
+    })
     setData(res.data)
   }
 
   useEffect(() => {
     getData()
   }, []);
+  
   return (
     <>
       <TweetForm />
       <div>
         {data.length && data.map(tweet => (
-          <Tweet name={tweet.user.name} username={tweet.user.username} avatar={image}>
+          <Tweet key={tweet.id} name={tweet.user.name} username={tweet.user.username} avatar={image}>
           {tweet.text}
         </Tweet>
         ))}
