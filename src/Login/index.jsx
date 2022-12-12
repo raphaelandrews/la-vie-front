@@ -18,7 +18,7 @@ const validationSchema = yup.object({
 const Login = ({ signInUser }) => {
   const formik = useFormik({
     onSubmit: async (values) => {
-      const res = await axios.get("http://localhost:9901/login", {
+      const res = await axios.get(`${import.meta.env.VITE_API_HOST}/login`, {
         auth: {
           username: values.email,
           password: values.password,
