@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import image from "./logo.png";
 import { HeartIcon } from "@heroicons/react/24/outline";
+import axios from "axios";
 
 const MAX_TWEET_CHAR = 140;
 
@@ -31,7 +32,7 @@ function TweetForm() {
         <div className="flex justify-end items-center space-x-3">
           <span className="text-sm">
             <span>{text.length}</span> /{" "}
-            <span> className="text-birdBlue">140</span>
+            <span className="text-birdBlue"> 140</span>
           </span>
           <button
             className="bg-birdBlue px-4 py-2 rounded-full disabled:opacity-50"
@@ -44,7 +45,7 @@ function TweetForm() {
 }
 
 function Tweet({ name, username, avatar, children }) {
-  return (
+    return (
     <div className="flex space-x-3 p-4 border-b border-silver">
       <div>
         <img src={avatar} />
@@ -63,16 +64,29 @@ function Tweet({ name, username, avatar, children }) {
 }
 
 const Home = () => {
+  const token = '';
+
+  async function getData() {
+    const res = await axios.get("http://localhost:9901/tweets", {
+      headers: {
+        'authorization': `Bearer ${token}`
+      }
+    });
+    setData(res.data)
+  }
+
+  useEffect(() => {
+    getData()
+  }, []);
   return (
     <>
       <TweetForm />
       <div>
-        <Tweet name="Elon Musk" username="elonmusk" avatar={image}>
-          Lets
+        {data.length && data.map(tweet => (
+          <Tweet name={tweet.user.name} username={tweet.user.username} avatar={image}>
+          {tweet.text}
         </Tweet>
-        <Tweet name="Elon Musk" username="elonmusk" avatar={image}>
-          Lets
-        </Tweet>
+        ))}
       </div>
     </>
   );
