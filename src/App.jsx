@@ -1,40 +1,22 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card } from "flowbite-react";
+import "../src/assets/css/style.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavbarIndex } from "../components/navbar/index";
 import HomeIndex from "./pages/Home/Home";
-import '../src/assets/css/style.css'
+import Psicologo from "./pages/Psicologo/Psicologo";
 
 const App = () => {
-  const [data, setData] = useState([]);
-
-  async function getData() {
-    const res = await axios.get(`${import.meta.env.VITE_API_HOST}/psicologos/`);
-    setData(res.data);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
-    <>
-      <NavbarIndex />
-      <HomeIndex />
-    </>
+    <BrowserRouter>
+      <div>
+        <NavbarIndex />
+        <Routes>
+          <Route exact path="/" element={<HomeIndex />}></Route>
+          <Route path="/psicologos/:id" element={<Psicologo />}></Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-
-  /*
-  const [user, setUser] = useState();
-
-  if (user) {
-    return <Home loggedInUser={user}/>
-  }
-
-  return window.location.pathname === '/signup'
-  ? <Signup signInUser={setUser} />
-  : <Login signInUser={setUser} />
-  */
 };
 
 export default App;

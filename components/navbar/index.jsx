@@ -1,11 +1,11 @@
 import React from "react";
 import { Navbar, Button } from "flowbite-react";
-import logo from "../../src/assets/logo.svg";
+import logo from "../../src/assets/img/logo.svg";
 
 export const NavbarIndex = () => {
   return (
     <Navbar fluid={true} rounded={true} className="!bg-black">
-      <Navbar.Brand href="https://flowbite.com/">
+      <Navbar.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="La Vie Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold">
           La vie
@@ -16,7 +16,7 @@ export const NavbarIndex = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/navbars" active={true} className="hover:text-purple active:!text-red-500">
+        <Navbar.Link href="/navbars" active={true} className="hover:text-purple">
           Home
         </Navbar.Link>
         <Navbar.Link href="/navbars" className="hover:!text-purple">About</Navbar.Link>
