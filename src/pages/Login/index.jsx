@@ -36,7 +36,7 @@ const Login = ({ signInUser }) => {
   });
 
   return (
-    <div className="h-full flex justify-center">
+    <div className="h-full min-h-screen flex justify-center">
       <div className="bg-birdBlue lg:flex-1"></div>
       <div className="flex-1 flex justify-center items-center p-12 space-y-6">
         <div className="max-w-md flex-1">

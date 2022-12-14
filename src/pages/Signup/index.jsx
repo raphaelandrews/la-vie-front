@@ -11,10 +11,10 @@ const Input = (props) => (
 );
 
 const validationSchema = yup.object({
-  name: yup.string().required("Digite seu nome"),
-  username: yup.string().required("Digite um nome de usuário"),
+  nome: yup.string().required("Digite seu nome"),
   email: yup.string().required("Digite um email").email("E-mail inválido"),
-  password: yup.string().required("Digite sua senha"),
+  senha: yup.string().required("Digite sua senha"),
+  apresentacao: yup.string().required("Faça sua apresentação"),
 });
 
 const Signup = ({ signInUser }) => {
@@ -22,56 +22,41 @@ const Signup = ({ signInUser }) => {
   const formik = useFormik({
     onSubmit: async values => {
    const res = await axios.post(`${import.meta.env.VITE_API_HOST}/signup`, {     
-          name: values.name,
+          nome: values.nome,
           email: values.email,
-          username: values.username,
-          password: values.password
+          senha: values.senha,
+          apresentacao: values.apresentacao
       })
 
       signInUser(res.data)
     },
       initialValues: {
-        name: "",
-        username: "",
+        nome: "",
         email: "",
-        password: ""
+        senha: "",
+        apresentacao: ""
       },
       validateOnMount: true,
       validationSchema,
   })
 
   return (
-    <div className="h-full flex flex-col justify-center p-12 space-y-6">
+    <div className="h-full min-h-screen flex flex-col justify-center p-12 space-y-6">
       <h1 className="text-3xl">Crie sua conta</h1>
 
       <form className="space-y-6" onSubmit={formik.handleSubmit}>
         <div className="space-y-2">
           <Input
             type="text"
-            name="name"
+            name="nome"
             placeholder="Nome"
-            value={formik.values.name}
+            value={formik.values.nome}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             disabled= {formik.isSubmitting}
           />
-          {formik.touched.name && formik.errors.name && (
-            <div className="text-red-500 text-sm">{formik.errors.name}</div>
-          )}
-        </div>
-
-        <div className="space-y-2">
-          <Input
-            type="text"
-            name="username"
-            placeholder="Nome de usuário"
-            value={formik.values.username}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            disabled= {formik.isSubmitting}
-          />
-          {formik.touched.username && formik.errors.username && (
-            <div className="text-red-500 text-sm">{formik.errors.username}</div>
+          {formik.touched.nome && formik.errors.nome && (
+            <div className="text-red-500 text-sm">{formik.errors.nome}</div>
           )}
         </div>
         
@@ -93,15 +78,30 @@ const Signup = ({ signInUser }) => {
         <div className="space-y-2">
           <Input
             type="password"
-            name="password"
+            name="senha"
             placeholder="Senha"
-            value={formik.values.password}
+            value={formik.values.senha}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             disabled= {formik.isSubmitting}
           />
-          {formik.touched.password && formik.errors.password && (
-            <div className="text-red-500 text-sm">{formik.errors.password}</div>
+          {formik.touched.senha && formik.errors.senha && (
+            <div className="text-red-500 text-sm">{formik.errors.senha}</div>
+          )}
+        </div>
+       
+        <div className="space-y-2">
+          <Input
+            type="text"
+            name="apresentacao"
+            placeholder="Apresentação"
+            value={formik.values.apresentacao}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            disabled= {formik.isSubmitting}
+          />
+          {formik.touched.apresentacao && formik.errors.apresentacao && (
+            <div className="text-red-500 text-sm">{formik.errors.apresentacao}</div>
           )}
         </div>
 
