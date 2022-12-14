@@ -7,8 +7,12 @@ const brandColors = {
   platinum: "#e1e1e6",
   silver: "#a8a8b3",  
   gray: "#29292e",
-  darkPurple: "#2c4bf6",
-  purple: "#4863f7",
+  darkPurple: "#514BF7",
+  purple: "#6F6AF8",
+  ice: '#F8FAFB',
+  greyIce: '#F2F2FD',
+  purpleBlue:'#1E1957',
+  white:'#FFFFFF'
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -22,10 +26,10 @@ module.exports = {
       colors: {
         ...brandColors,
 
-        backgroundColor: brandColors.blackGradient,
-        textColor: brandColors.platinum
+        backgroundColor: brandColors.ice,
+        textColor: brandColors.purpleBlue
       }
     },
   },
   plugins: [require('flowbite/plugin')],
-}
+};

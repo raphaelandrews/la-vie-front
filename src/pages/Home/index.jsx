@@ -19,11 +19,15 @@ function AtendimentosForm({ loggedInUser, onSucess }) {
         },
       });
 
-      form.setFieldValue("text", "");
+      form.setFieldValue("pacienteId", "");
+      form.setFieldValue("data_atendimento", "");
+      form.setFieldValue("observacao", "");
       onSucess();
     },
     initialValues: {
-      text: "",
+      pacienteId: "",
+      data_atendimento: "",
+      observacao: "",
     },
   });
 
@@ -43,7 +47,6 @@ function AtendimentosForm({ loggedInUser, onSucess }) {
         onSubmit={formik.handleSubmit}
       >
         <input
-          type="number"
           step="1"
           name="pacienteId"
           value={formik.values.pacienteId}
@@ -102,7 +105,7 @@ function Atendimento({ nome, apresentacao, avatar, children }) {
   );
 }
 
-const Home = ({ loggedInUser }) => {
+const Atendimentos1 = ({ loggedInUser }) => {
   const [data, setData] = useState([]);
 
   async function getData() {
@@ -145,4 +148,4 @@ const Home = ({ loggedInUser }) => {
   );
 };
 
-export default Home;
+export default Atendimentos1;
