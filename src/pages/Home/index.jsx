@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import image from "./logo.png";
 import { useFormik } from "formik";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-function AtendimentosForm({ loggedInUser, onSucess }) {
+function AtendimentosForm({ loggedInUser }) {
+  const navigate = useNavigate();
   const formik = useFormik({
     onSubmit: async (values, form) => {
       await axios({
@@ -22,7 +24,7 @@ function AtendimentosForm({ loggedInUser, onSucess }) {
       form.setFieldValue("pacienteId", "");
       form.setFieldValue("data_atendimento", "");
       form.setFieldValue("observacao", "");
-      onSucess();
+      navigate('/');
     },
     initialValues: {
       pacienteId: "",
@@ -30,10 +32,6 @@ function AtendimentosForm({ loggedInUser, onSucess }) {
       observacao: "",
     },
   });
-
-  function changeText(e) {
-    setText(e.target.value);
-  }
 
   return (
     <div className="border-b border-silver p-4 space-y-6">

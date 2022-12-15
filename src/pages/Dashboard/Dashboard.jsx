@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Home, TableDocument, Setting2, User, Send2 } from "iconsax-react";
-import logo from "../../../src/assets/img/logo.svg";
-import { Card, Table } from "flowbite-react";
+import { User, Send2 } from "iconsax-react";
+import { Card } from "flowbite-react";
 
 const Dashboard = () => {
+  var optionsDate = {
+    /*weekday: "short",*/
+    year: "numeric",
+    month: "2-digit",
+    day: "numeric"
+};
+
+var optionsTime = {
+    /*timeZoneName: 'short',*/
+    hour: '2-digit',
+    minute: '2-digit'
+};
+
   const [data, setData] = useState([]);
 
   async function getData() {
@@ -41,7 +53,7 @@ const Dashboard = () => {
                 {data.length &&
                   data.map((psicologos) => (
                     <div className="w-full my-0 mx-auto">
-                      <Card className="card !bg-white rounded-[36px] border-none">
+                     <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" />
                           Psicólogo(a) {psicologos.nome}
@@ -109,13 +121,13 @@ const Dashboard = () => {
                 {paciente.length &&
                   paciente.map((pacientes) => (
                     <div className="w-full my-0 mx-auto">
-                      <Card className="card !bg-white rounded-[36px] border-none">
+                      <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" /> Paciente{" "}
                           {pacientes.nome}
                         </h2>
                         <p className="apresentacao font-regular">
-                          {pacientes.idade}
+                          {new Date(pacientes.idade).toLocaleString('pt-BR', optionsDate)}
                         </p>
                         <div className="email font-regular hover:text-purple">
                           <div className="flex items-center">
@@ -145,7 +157,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-green-500 hover:!bg-green-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`/psicologos/${pacientes.psicologo_id}`}
+                              href={`/pacientes-atualizar/${pacientes.paciente_id}`}
                               className="text-white"
                             >
                               Atualizar
@@ -156,7 +168,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-red-500 hover:!bg-red-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`/psicologos/${pacientes.psicologo_id}`}
+                              href={`/pacientes-atualizar/${pacientes.paciente_id}`}
                               className="text-white"
                             >
                               Deletar
