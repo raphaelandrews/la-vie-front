@@ -90,60 +90,10 @@ function AtendimentosForm({ loggedInUser, onSucess }) {
   );
 }
 
-function Atendimento({ nome, apresentacao, avatar, children }) {
-  return (
-    <div className="flex space-x-3 p-4 border-b border-silver">
-      <div>
-        <img src={avatar} />
-      </div>
-      <div className="space-y-1">
-        <span className="font-bold text-sm">{nome}</span>{" "}
-        <span className="text-sm text-silver">@{apresentacao}</span>
-        <div>{children}</div>
-      </div>
-    </div>
-  );
-}
-
 const Atendimentos1 = ({ loggedInUser }) => {
-  const [data, setData] = useState([]);
-
-  async function getData() {
-    const res = await axios.get(
-      `${import.meta.env.VITE_API_HOST}/atendimentos/`,
-      {
-        headers: {
-          authorization: `Bearer ${loggedInUser.acessToken}`,
-        },
-      }
-    );
-    setData(res.data);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <>
-      <AtendimentosForm loggedInUser={loggedInUser} onSucess={getData} />
-      {/*<div>
-        {data.length &&
-          data.map((atendimento) => (
-            <Atendimento
-              key={atendimento.atendimentos_id}
-              nome={atendimento.psicologos.nome}
-              apresentacao={atendimento.psicologos.apresentacao}
-              avatar={image}
-            >
-              <div>
-                {atendimento.psicologos.nome}
-                {atendimento.observacao}
-                {atendimento.psicologos.psicologo_id}
-              </div>
-            </Atendimento>
-          ))}
-      </div>*/}
+      <AtendimentosForm loggedInUser={loggedInUser} />
     </>
   );
 };
