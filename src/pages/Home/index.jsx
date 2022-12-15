@@ -127,7 +127,7 @@ const Atendimentos1 = ({ loggedInUser }) => {
   return (
     <>
       <AtendimentosForm loggedInUser={loggedInUser} onSucess={getData} />
-      <div>
+      {/*<div>
         {data.length &&
           data.map((atendimento) => (
             <Atendimento
@@ -143,7 +143,7 @@ const Atendimentos1 = ({ loggedInUser }) => {
               </div>
             </Atendimento>
           ))}
-      </div>
+      </div>*/}
     </>
   );
 };
