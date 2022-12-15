@@ -65,7 +65,7 @@ const Dashboard = () => {
                           className="inline-flex w-full justify-center rounded-[18px] bg-purple hover:!bg-darkPurple px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                         >
                           <a
-                            href={`http://127.0.0.1:5173/psicologos/${psicologos.psicologo_id}`}
+                            href={`hhttps://la-vie-back.vercel.app/psicologos/${psicologos.psicologo_id}`}
                             className="text-white"
                           >
                             Ver Perfil
@@ -77,7 +77,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-green-500 hover:!bg-green-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`http://127.0.0.1:5173/atualizar-psicologo/${psicologos.psicologo_id}`}
+                              href={`https://la-vie-back.vercel.app/atualizar-psicologo/${psicologos.psicologo_id}`}
                               className="text-white"
                             >
                               Atualizar
@@ -88,7 +88,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-red-500 hover:!bg-red-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`http://127.0.0.1:5173/deletar-psicologo/${psicologos.psicologo_id}`}
+                              href={`https://la-vie-back.vercel.app/deletar-psicologo/${psicologos.psicologo_id}`}
                               className="text-white"
                             >
                               Deletar
@@ -133,7 +133,7 @@ const Dashboard = () => {
                           className="inline-flex w-full justify-center rounded-[18px] bg-purple hover:!bg-darkPurple px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                         >
                           <a
-                            href={`http://127.0.0.1:5173/pacientes/${pacientes.pacientes_id}`}
+                            href={`https://la-vie-back.vercel.app/pacientes/${pacientes.pacientes_id}`}
                             className="text-white"
                           >
                             Ver Perfil
@@ -145,7 +145,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-green-500 hover:!bg-green-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`http://127.0.0.1:5173/psicologos/${pacientes.psicologo_id}`}
+                              href={`https://la-vie-back.vercel.app/psicologos/${pacientes.psicologo_id}`}
                               className="text-white"
                             >
                               Atualizar
@@ -156,7 +156,7 @@ const Dashboard = () => {
                             className="inline-flex w-full justify-center rounded-[18px] bg-red-500 hover:!bg-red-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`http://127.0.0.1:5173/psicologos/${pacientes.psicologo_id}`}
+                              href={`https://la-vie-back.vercel.app/psicologos/${pacientes.psicologo_id}`}
                               className="text-white"
                             >
                               Deletar

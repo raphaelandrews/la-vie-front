@@ -49,7 +49,7 @@ const Home = () => {
                     className="inline-flex w-full justify-center rounded-[18px] bg-purple hover:!bg-darkPurple px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                   >
                     <a
-                      href={`http://127.0.0.1:5173/psicologos/${psicologos.psicologo_id}`}
+                      href={`https://la-vie-back.vercel.app/${psicologos.psicologo_id}`}
                       className="text-white"
                     >
                       Ver Perfil

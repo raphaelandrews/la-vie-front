@@ -46,6 +46,7 @@ const Psicologo = () => {
         <h2>Lista de Atendimentos</h2>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {data.atendimentos &&
+            data.atendimentos.length &&
             data.atendimentos.map((data) => (
               <div className="w-full my-0 mx-auto">
                 <Card className="card !bg-black rounded border-[1px] border-gray">
