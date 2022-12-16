@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import image from "./logo.png";
 import { useFormik } from "formik";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { Card, TextInput, Label } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 function AtendimentosForm({ loggedInUser }) {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function AtendimentosForm({ loggedInUser }) {
       form.setFieldValue("pacienteId", "");
       form.setFieldValue("data_atendimento", "");
       form.setFieldValue("observacao", "");
-      navigate('/');
+      navigate("/");
     },
     initialValues: {
       pacienteId: "",
@@ -34,56 +34,78 @@ function AtendimentosForm({ loggedInUser }) {
   });
 
   return (
-    <div className="border-b border-silver p-4 space-y-6">
-      <div className="flex space-x-5">
-        <img src={image} className="w-7" />
-        <h1 className="font-bold text-xl">Página Inicial</h1>
-      </div>
+    <div className="mt-32 p-4 space-y-6">
+      <div className="w-full my-0 mx-auto max-w-[400px]">
+        <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
+          <h1 className="text-center font-semibold text-xl text-gray-500">
+            Página Inicial
+          </h1>
 
-      <form
-        className="pl-12 text-lg flex flex-col"
-        onSubmit={formik.handleSubmit}
-      >
-        <input
-          step="1"
-          name="pacienteId"
-          value={formik.values.pacienteId}
-          placeholder="Id do paciente"
-          className="bg-transparent outline-none"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          disabled={formik.isSubmitting}
-        />
-
-        <input
-          name="data_atendimento"
-          value={formik.values.data_atendimento}
-          placeholder="Data"
-          className="bg-transparent outline-none"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          disabled={formik.isSubmitting}
-        />
-
-        <input
-          name="observacao"
-          value={formik.values.observacao}
-          placeholder="Observação"
-          className="bg-transparent outline-none"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          disabled={formik.isSubmitting}
-        />
-
-        <div className="flex justify-end items-center space-x-3">
-          <button
-            type="submit"
-            className="bg-birdBlue px-4 py-2 rounded-full disabled:opacity-50"
+          <form
+            className="p-4 text-lg flex flex-col gap-4"
+            onSubmit={formik.handleSubmit}
           >
-            Enviar
-          </button>
-        </div>
-      </form>
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="idPaciente" value="Id do Paciente" />
+              </div>
+              <TextInput
+                id="idPaciente"
+                step="1"
+                name="pacienteId"
+                value={formik.values.pacienteId}
+                placeholder="Digite o Id do paciente"
+                className="bg-transparent outline-none"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                disabled={formik.isSubmitting}
+              />
+            </div>
+
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="data" value="Data do atendimento" />
+              </div>
+              <TextInput
+                id="data"
+                type="date"
+                name="data_atendimento"
+                value={formik.values.data_atendimento}
+                placeholder="Digite a data do atendimento"
+                className="bg-transparent outline-none"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                disabled={formik.isSubmitting}
+              />
+            </div>
+
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="observacao" value="Observação" />
+              </div>
+              <TextInput
+                id="observacao"
+                name="observacao"
+                value={formik.values.observacao}
+                placeholder="Digites as observações"
+                className="bg-transparent outline-none"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                disabled={formik.isSubmitting}
+              />
+            </div>
+
+            <div className="flex justify-end items-center space-x-3">
+              <button
+                type="submit"
+                className="inline-flex w-full justify-center rounded-[18px] hover:cursor-pointer bg-purple hover:!bg-darkPurple mt-4 px-5 py-2.5 text-white text-center text-sm font-medium focus:outline-none"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
+        </Card>
+      </div>
     </div>
   );
 }

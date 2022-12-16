@@ -38,11 +38,11 @@ const Dashboard = () => {
   useEffect(() => {
     getpaciente();
   }, []);
-
+  
   return (
     <div>
       <div>
-        <div className="relative p-8">
+        <div className="dashboard_container relative p-8">
           <h1 className="text-[40px] font-bold text-center mb-10">Dashboard</h1>
           <div className="flex flex-col md:flex-row justify-center gap-[120px]">
             <div>
@@ -52,7 +52,7 @@ const Dashboard = () => {
               <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 mb-32">
                 {data.length &&
                   data.map((psicologos, index) => (
-                    <div key={index + 1} className="w-full max-w-[400px] my-0 mx-auto">
+                    <div key={index + 1} className="w-[300px] my-0 mx-auto">
                       <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" />
@@ -120,7 +120,7 @@ const Dashboard = () => {
               <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 mb-32">
                 {paciente.length &&
                   paciente.map((pacientes, index) => (
-                    <div key={index + 1} className="w-full my-0 mx-auto">
+                    <div key={index + 1} className="w-[300px] my-0 mx-auto">
                       <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" /> Paciente{" "}

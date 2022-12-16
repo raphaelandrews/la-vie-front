@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 import { Card, TextInput, Label } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
   nome: yup.string().required("Digite seu nome"),
@@ -11,7 +12,9 @@ const validationSchema = yup.object({
   apresentacao: yup.string().required("Digite sua apresentação"),
 });
 
-const Signup = ({ signInUser }) => {
+const Signup = ({ }) => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     onSubmit: async (values) => {
       const res = await axios.post(`${import.meta.env.VITE_API_HOST}/signup`, {
@@ -21,7 +24,8 @@ const Signup = ({ signInUser }) => {
         apresentacao: values.apresentacao,
       });
 
-      signInUser(res.data);
+      (res.data);
+      navigate("/atendimentos");
     },
     initialValues: {
       nome: "",
@@ -37,10 +41,10 @@ const Signup = ({ signInUser }) => {
     <div className="h-full mt-8 flex flex-col justify-center p-12 space-y-6">
       <div className="flex-1 flex justify-center items-center p-12 space-y-6">
         <div className="w-full my-0 mx-auto max-w-[400px]">
-          <Card className="card !bg-white rounded-[36px] border-none p-4">
-            <h1 className="text-center text-3xl">Crie sua conta</h1>
+        <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
+            <h1 className="text-center font-semibold text-xl text-gray-500">Crie sua conta</h1>
 
-            <form className="space-y-6" onSubmit={formik.handleSubmit}>
+            <form className="p-4 text-lg flex flex-col gap-4" onSubmit={formik.handleSubmit}>
               <div>
                 <div className="mb-2 block">
                   <Label htmlFor="nome" value="Nome" />

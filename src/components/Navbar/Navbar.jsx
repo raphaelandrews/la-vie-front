@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Navbar, Button } from "flowbite-react";
 import logo from "../../assets/img/logo-purple.svg";
-import { Switch } from "@headlessui/react";
+import DarkMode from "../DarkMode";
 
 const NavbarComponent = (props) => {
-  const [enabled, setEnabled] = useState(false);
+ // const [enabled, setEnabled] = useState(false);
 
   return (
     <Navbar fluid={true} rounded={true} className="!bg-ice dark:!bg-black">
@@ -15,25 +15,26 @@ const NavbarComponent = (props) => {
         </span>
       </Navbar.Brand>
       <div className="flex items-center gap-4 md:order-2">
-       
-        <Button className="!bg-purple hover:!bg-darkPurple">
-          <a href="/acessar">Acessar</a>
-        </Button>
-        <Switch
-          checked={enabled}
-          onClick={props.toggleDarkMode}
-          onChange={setEnabled}
-          className={`${
-            enabled ? "bg-purple" : "bg-white"
-          } relative inline-flex h-6 w-11 items-center rounded-full`}
-        >
-          <span className="sr-only">Enable notifications</span>
-          <span
+     {/*<Switch
+            checked={enabled}
+            onClick={props.toggleDarkMode}
+            onChange={setEnabled}
             className={`${
-              enabled ? "translate-x-6" : "translate-x-1"
-            } inline-block h-4 w-4 transform rounded-full bg-white dark:!bg-purple transition`}
-          />
-        </Switch>
+              enabled ? "bg-purple" : "bg-white"
+            } relative inline-flex h-6 w-11 items-center rounded-full`}
+          >
+            <span className="sr-only">Enable notifications</span>
+            <span
+              className={`${
+                enabled ? "translate-x-6" : "translate-x-1"
+              } inline-block h-4 w-4 transform rounded-full bg-white dark:!bg-purple transition`}
+            />
+          </Switch>*/}    
+          <DarkMode />      
+        <Button className="!bg-purple hover:!bg-darkPurple">
+          <a href="/acessar">Acessar</a> 
+        </Button>
+        
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
