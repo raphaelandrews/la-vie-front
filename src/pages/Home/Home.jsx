@@ -3,7 +3,6 @@ import axios from "axios";
 import { Card } from "flowbite-react";
 import logo from "../../assets/img/logo-purple.svg";
 import { User, Send2 } from "iconsax-react";
-import logolavie from "../../assets/img/lavie-logo.png"
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -64,7 +63,6 @@ const Home = () => {
                 </Card>
               </div>
             ))}
-            <div><img src={logolavie} alt="" /></div>
         </div>
       </div>
     </>
