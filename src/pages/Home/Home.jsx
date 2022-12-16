@@ -22,12 +22,12 @@ const Home = () => {
         <div className="text-center my-[120px]">
           <img src={logo} alt="La Vie logo" className="w-60 my-0 mx-auto" />
           <h1 className="text-7xl mt-4 mb-2 font-bold">La Vie</h1>
-          <h2 className="text-3xl semibold">Clínica Psicológica</h2>
+          <h2 className="text-3xl semibold">Saúde Mental</h2>
         </div>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {data.length &&
-            data.map((psicologos) => (
-              <div className="w-full my-0 mx-auto">
+            data.map((psicologos, index) => (
+              <div key={index + 1} className="w-full my-0 mx-auto">
                 <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
                   <div className="flex items-center gap-1">
                     <User size="20" color="#6F6AF8" />

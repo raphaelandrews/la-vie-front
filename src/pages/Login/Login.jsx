@@ -2,17 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-
-
-const Input = (props) => (
-  <input
-    {...props}
-    className="w-full bg-transparent p-4 border rounded-xl border-onix text-lg outline-none focus:border-platinum"
-  />
-);
+import { Card, TextInput, Label } from "flowbite-react";
 
 const validationSchema = yup.object({
-  email: yup.string().required("Digite um email").email("E-mail inválido"),
+  email: yup.string().required("Digite seu email").email("E-mail inválido"),
   password: yup.string().required("Digite sua senha"),
 });
 
@@ -37,62 +30,75 @@ const Login = ({ signInUser }) => {
   });
 
   return (
-    <div className="h-full min-h-screen flex justify-center">
-      <div className="bg-birdBlue lg:flex-1"></div>
+    <div className="h-full mt-32 flex justify-center">
       <div className="flex-1 flex justify-center items-center p-12 space-y-6">
-        <div className="max-w-md flex-1">
-          <h1 className="text-3xl">Acesse sua conta</h1>
+        <div className="w-full my-0 mx-auto max-w-[400px]">
+          <Card className="card !bg-white rounded-[36px] border-none p-4">
+            <h1 className="text-center text-3xl">Acesse sua conta</h1>
 
-          <form className="space-y-6" onSubmit={formik.handleSubmit}>
-            <div className="space-y-2">
-              <Input
-                type="text"
-                name="email"
-                placeholder="E-mail"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                disabled={formik.isSubmitting}
-              />
-              {formik.touched.email && formik.errors.email && (
-                <div className="text-red-500 text-sm">
-                  {formik.errors.email}
+            <form className="space-y-6" onSubmit={formik.handleSubmit}>
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="email" value="Email" />
                 </div>
-              )}
-            </div>
+                <TextInput
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Digite seu email"
+                  className="bg-transparent outline-none"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  disabled={formik.isSubmitting}
+                />
+                {formik.touched.email && formik.errors.email && (
+                  <div className="text-red-500 text-sm">
+                    {formik.errors.email}
+                  </div>
+                )}
+              </div>
 
-            <div className="space-y-2">
-              <Input
-                type="password"
-                name="password"
-                placeholder="Senha"
-                value={formik.values.password}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                disabled={formik.isSubmitting}
-              />
-              {formik.touched.password && formik.errors.password && (
-                <div className="text-red-500 text-sm">
-                  {formik.errors.password}
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="password" value="Senha" />
                 </div>
-              )}
-            </div>
+                <div className="space-y-2">
+                  <TextInput
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="Digite sua senha"
+                    className="bg-transparent outline-none"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    disabled={formik.isSubmitting}
+                  />
+                  {formik.touched.password && formik.errors.password && (
+                    <div className="text-red-500 text-sm">
+                      {formik.errors.password}
+                    </div>
+                  )}
+                </div>
+              </div>
 
-            <button
-              type="submit"
-              className="w-full bg-birdBlue py-4 rounded-full disabled:opacity-50 text-lg"
-              disabled={formik.isSubmitting || !formik.isValid}
-            >
-              {formik.isSubmitting ? "Enviando..." : "Entrar"}
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="inline-flex w-full justify-center rounded-[18px] hover:cursor-pointer bg-purple hover:!bg-darkPurple mt-4 px-5 py-2.5 text-white text-center text-sm font-medium focus:outline-none"
+                disabled={formik.isSubmitting || !formik.isValid}
+              >
+                {formik.isSubmitting ? "Enviando..." : "Entrar"}
+              </button>
+            </form>
 
-          <span className="text-sm text-silver text-center">
-            Não tem conta?{" "}
-            <a className="text-birdBlue" href="/signup">
-              Inscreva-se.
-            </a>
-          </span>
+            <span className="text-sm text-silver text-center">
+              Não tem conta?{" "}
+              <a className="text-purple" href="/signup">
+                Inscreva-se.
+              </a>
+            </span>
+          </Card>
         </div>
       </div>
     </div>

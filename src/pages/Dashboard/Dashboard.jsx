@@ -8,14 +8,14 @@ const Dashboard = () => {
     /*weekday: "short",*/
     year: "numeric",
     month: "2-digit",
-    day: "numeric"
-};
+    day: "numeric",
+  };
 
-var optionsTime = {
+  var optionsTime = {
     /*timeZoneName: 'short',*/
-    hour: '2-digit',
-    minute: '2-digit'
-};
+    hour: "2-digit",
+    minute: "2-digit",
+  };
 
   const [data, setData] = useState([]);
 
@@ -44,16 +44,16 @@ var optionsTime = {
       <div>
         <div className="relative p-8">
           <h1 className="text-[40px] font-bold text-center mb-10">Dashboard</h1>
-          <div className="flex justify-center gap-[120px]">
+          <div className="flex flex-col md:flex-row justify-center gap-[120px]">
             <div>
               <div className="text-[28px] font-semibold text-center mb-4">
                 Psicólogos
               </div>
               <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 mb-32">
                 {data.length &&
-                  data.map((psicologos) => (
-                    <div className="w-full my-0 mx-auto">
-                     <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
+                  data.map((psicologos, index) => (
+                    <div key={index + 1} className="w-full max-w-[400px] my-0 mx-auto">
+                      <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" />
                           Psicólogo(a) {psicologos.nome}
@@ -119,15 +119,18 @@ var optionsTime = {
               </div>
               <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 mb-32">
                 {paciente.length &&
-                  paciente.map((pacientes) => (
-                    <div className="w-full my-0 mx-auto">
+                  paciente.map((pacientes, index) => (
+                    <div key={index + 1} className="w-full my-0 mx-auto">
                       <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" /> Paciente{" "}
                           {pacientes.nome}
                         </h2>
                         <p className="apresentacao font-regular">
-                          {new Date(pacientes.idade).toLocaleString('pt-BR', optionsDate)}
+                          {new Date(pacientes.idade).toLocaleString(
+                            "pt-BR",
+                            optionsDate
+                          )}
                         </p>
                         <div className="email font-regular hover:text-purple">
                           <div className="flex items-center">
@@ -168,7 +171,7 @@ var optionsTime = {
                             className="inline-flex w-full justify-center rounded-[18px] bg-red-500 hover:!bg-red-600 px-5 py-2.5 text-center text-sm font-medium focus:outline-none"
                           >
                             <a
-                              href={`/pacientes-atualizar/${pacientes.paciente_id}`}
+                              href={`/deletar-paciente/${pacientes.paciente_id}`}
                               className="text-white"
                             >
                               Deletar

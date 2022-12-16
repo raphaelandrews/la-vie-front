@@ -88,7 +88,7 @@ function AtendimentosForm({ loggedInUser }) {
   );
 }
 
-const Atendimentos1 = ({ loggedInUser }) => {
+const AtendimentosCreate = ({ loggedInUser }) => {
   return (
     <>
       <AtendimentosForm loggedInUser={loggedInUser} />
@@ -96,4 +96,4 @@ const Atendimentos1 = ({ loggedInUser }) => {
   );
 };
 
-export default Atendimentos1;
+export default AtendimentosCreate;
