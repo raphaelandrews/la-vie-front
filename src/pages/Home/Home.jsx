@@ -64,7 +64,7 @@ const Home = () => {
                 </Card>
               </div>
             ))}
-            <div>{logolavie}</div>
+            <div><img src={logolavie} alt="" /></div>
         </div>
       </div>
     </>
