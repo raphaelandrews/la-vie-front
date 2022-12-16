@@ -64,7 +64,7 @@ const Home = () => {
                 </Card>
               </div>
             ))}
-            <div></div>
+            <div>{logolavie}</div>
         </div>
       </div>
     </>
