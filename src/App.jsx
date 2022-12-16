@@ -1,6 +1,7 @@
 import React from "react";
 import "../src/assets/css/style.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 import NavbarComponent from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -22,6 +23,7 @@ const App = () => {
   } */
 
   return (
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
     <BrowserRouter>
       <div>
         <div className="min-h-screen dark:bg-black dark:text-platinum">
@@ -57,6 +59,7 @@ const App = () => {
         </div>
       </div>
     </BrowserRouter>
+    </SkeletonTheme>
   );
 };
 
