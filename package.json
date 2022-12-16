@@ -10,6 +10,7 @@
     "serve": "vite --port 9901"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.6",
     "@heroicons/react": "^2.0.13",
     "@material-tailwind/react": "^1.2.4",
     "axios": "^1.2.1",

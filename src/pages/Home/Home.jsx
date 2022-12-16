@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="max-w-[70%] my-20 mx-auto">
+      <div className="max-w-[70%] py-20 mx-auto">
         <div className="text-center my-[120px]">
           <img src={logo} alt="La Vie logo" className="w-60 my-0 mx-auto" />
           <h1 className="text-7xl mt-4 mb-2 font-bold">La Vie</h1>
@@ -28,7 +28,7 @@ const Home = () => {
           {data.length &&
             data.map((psicologos, index) => (
               <div key={index + 1} className="w-full my-0 mx-auto">
-                <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
+                <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                   <div className="flex items-center gap-1">
                     <User size="20" color="#6F6AF8" />
                     <h2 className=" text-xl text-gray-500">

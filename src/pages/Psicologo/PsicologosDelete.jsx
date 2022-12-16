@@ -42,9 +42,9 @@ const PsicologosDelete = () => {
   }
 
   return (
-    <div className="max-w-[70%] my-20 mx-auto">
-      <div className="w-full my-0 mx-auto max-w-[400px]">
-        <Card className="card !bg-white rounded-[36px] border-none p-4">
+    <div className="max-w-[70%] my-56 mx-auto">
+      <div className="w-full mx-auto max-w-[400px]">
+      <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
           <h2 className="text-center font-semibold text-xl text-gray-500">
             Deletar Psicologo
           </h2>

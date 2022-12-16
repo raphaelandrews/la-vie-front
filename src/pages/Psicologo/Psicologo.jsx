@@ -37,7 +37,7 @@ const Psicologo = () => {
       <div className="max-w-[70%] my-20 mx-auto">
         <h1 className="text-[32px] font-bold text-center mt-28 mb-20">Perfil de {data.nome}</h1>
           <div className="w-full my-0 mx-auto max-w-[400px]">
-            <Card className="card !bg-white rounded-[36px] border-none">
+          <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
               <h3 className=" text-xl text-gray-500">
                 <User size="24" color="#6F6AF8" />
                 Psicólogo(a) {data.nome}
@@ -66,7 +66,7 @@ const Psicologo = () => {
             data.atendimentos.length &&
             data.atendimentos.map((data) => (
               <div className="w-full my-0 mx-auto">
-                <Card className="card !bg-white rounded-[36px] border-none">
+                <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                   <h3 className=" text-xl text-gray-500">
                     <User size="24" color="#6F6AF8" />
                     Paciente {data.pacienteId}

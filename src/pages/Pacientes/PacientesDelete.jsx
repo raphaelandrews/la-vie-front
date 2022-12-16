@@ -42,9 +42,9 @@ const PacientesDelete = () => {
   }
 
   return (
-    <div className="max-w-[70%] my-20 mx-auto">
+    <div className="max-w-[70%] my-56 mx-auto">
       <div className="w-full my-0 mx-auto max-w-[400px]">
-        <Card className="card !bg-white rounded-[36px] border-none p-4">
+      <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
           <h2 className="text-center font-semibold text-xl text-gray-500">
             Deletar paciente
           </h2>

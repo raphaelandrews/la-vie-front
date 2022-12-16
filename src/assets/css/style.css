@@ -23,6 +23,10 @@
 card.evento span {
     margin-bottom: 1rem
 }
+/*
+nav:first-child {
+    padding: 1rem 2rem;
+}*/
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {

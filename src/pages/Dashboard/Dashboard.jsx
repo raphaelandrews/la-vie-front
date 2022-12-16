@@ -53,7 +53,7 @@ const Dashboard = () => {
                 {data.length &&
                   data.map((psicologos, index) => (
                     <div key={index + 1} className="w-full max-w-[400px] my-0 mx-auto">
-                      <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
+                      <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" />
                           Psicólogo(a) {psicologos.nome}
@@ -121,7 +121,7 @@ const Dashboard = () => {
                 {paciente.length &&
                   paciente.map((pacientes, index) => (
                     <div key={index + 1} className="w-full my-0 mx-auto">
-                      <Card className="card !bg-white dark:!bg-black rounded-[36px] dark:rounded border-none dark:border-[1px] dark:border-gray">
+                      <Card className="card !bg-white dark:!bg-black rounded-[36px] border-none dark:border-solid dark:border-[1px] dark:border-gray">
                         <h2 className=" text-xl text-gray-500">
                           <User size="24" color="#6F6AF8" /> Paciente{" "}
                           {pacientes.nome}
