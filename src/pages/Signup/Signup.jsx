@@ -4,6 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { Card, Label } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
+import logolavie from "../../assets/img/lavie-logo.png"
 
 const validationSchema = yup.object({
   nome: yup.string().required("Digite seu nome"),
@@ -151,6 +152,7 @@ const Signup = ({ }) => {
           </Card>
         </div>
       </div>
+      <div><img src={logolavie} alt="" className="hidden" /></div>
     </div>
   );
 };
