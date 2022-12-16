@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { Card, TextInput, Label } from "flowbite-react";
+import { Card, Label } from "flowbite-react";
 
 const validationSchema = yup.object({
   email: yup.string().required("Digite seu email").email("E-mail inválido"),
@@ -41,12 +41,12 @@ const Login = ({ signInUser }) => {
                 <div className="mb-2 block">
                   <Label htmlFor="email" value="Email" />
                 </div>
-                <TextInput
+                <input
                   id="email"
                   type="email"
                   name="email"
                   placeholder="Digite seu email"
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -64,12 +64,12 @@ const Login = ({ signInUser }) => {
                   <Label htmlFor="password" value="Senha" />
                 </div>
                 <div className="space-y-2">
-                  <TextInput
+                  <input
                     id="password"
                     type="password"
                     name="password"
                     placeholder="Digite sua senha"
-                    className="bg-transparent outline-none"
+                    className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                     value={formik.values.password}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}

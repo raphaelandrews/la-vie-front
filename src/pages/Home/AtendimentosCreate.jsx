@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
-import { Card, TextInput, Label } from "flowbite-react";
+import { Card, Label } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
 function AtendimentosForm({ loggedInUser }) {
@@ -49,13 +49,13 @@ function AtendimentosForm({ loggedInUser }) {
               <div className="mb-2 block">
                 <Label htmlFor="idPaciente" value="Id do Paciente" />
               </div>
-              <TextInput
+              <input
                 id="idPaciente"
                 step="1"
                 name="pacienteId"
                 value={formik.values.pacienteId}
                 placeholder="Digite o Id do paciente"
-                className="bg-transparent outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}
@@ -66,13 +66,13 @@ function AtendimentosForm({ loggedInUser }) {
               <div className="mb-2 block">
                 <Label htmlFor="data" value="Data do atendimento" />
               </div>
-              <TextInput
+              <input
                 id="data"
                 type="date"
                 name="data_atendimento"
                 value={formik.values.data_atendimento}
                 placeholder="Digite a data do atendimento"
-                className="bg-transparent outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}
@@ -83,12 +83,12 @@ function AtendimentosForm({ loggedInUser }) {
               <div className="mb-2 block">
                 <Label htmlFor="observacao" value="Observação" />
               </div>
-              <TextInput
+              <input
                 id="observacao"
                 name="observacao"
                 value={formik.values.observacao}
                 placeholder="Digites as observações"
-                className="bg-transparent outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}

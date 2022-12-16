@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Card, TextInput, Label } from "flowbite-react";
+import { Card, Label } from "flowbite-react";
 import axios from "axios";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -79,12 +79,12 @@ const PacientesUpdate = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="nome" value="Nome" />
                 </div>
-                <TextInput
+                <input
                   id="nome"
                   name="nome"
                   value={formik.values.nome}
                   placeholder={data.nome}
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   disabled={formik.isSubmitting}
@@ -95,7 +95,7 @@ const PacientesUpdate = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="idade" value="Data de nascimento" />
                 </div>
-                <TextInput
+                <input
                 type="date"
                   id="idade"
                   name="idade"
@@ -104,7 +104,7 @@ const PacientesUpdate = () => {
                     "pt-BR",
                     optionsDate
                   )}
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   disabled={formik.isSubmitting}
@@ -114,12 +114,12 @@ const PacientesUpdate = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="email" value="Email" />
                 </div>
-                <TextInput
+                <input
                   id="email"
                   name="email"
                   value={formik.values.email}
                   placeholder={data.email}
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   disabled={formik.isSubmitting}

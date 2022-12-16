@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { Card, TextInput, Label } from "flowbite-react";
+import { Card, Label } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
@@ -49,12 +49,12 @@ const Signup = ({ }) => {
                 <div className="mb-2 block">
                   <Label htmlFor="nome" value="Nome" />
                 </div>
-                <TextInput
+                <input
                   id="nome"
                   type="text"
                   name="nome"
                   placeholder="Digite seu nome"
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   value={formik.values.nome}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -71,12 +71,12 @@ const Signup = ({ }) => {
                 <div className="mb-2 block">
                   <Label htmlFor="email" value="Digite seu email" />
                 </div>
-                <TextInput
+                <input
                   id="email"
                   type="email"
                   name="email"
                   placeholder="Digite seu email"
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -93,12 +93,12 @@ const Signup = ({ }) => {
                 <div className="mb-2 block">
                   <Label htmlFor="password" value="Senha" />
                 </div>
-                <TextInput
+                <input
                   id="password"
                   type="password"
                   name="senha"
                   placeholder="Digite sua senha"
-                  className="bg-transparent outline-none"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   value={formik.values.senha}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -115,11 +115,12 @@ const Signup = ({ }) => {
                 <div className="mb-2 block">
                   <Label htmlFor="apresentacao" value="Apresentação" />
                 </div>
-                <TextInput
+                <input
                   id="apresentacao"
                   type="text"
                   name="apresentacao"
                   placeholder="Digite sua apresentação"
+                  className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                   value={formik.values.apresentacao}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}

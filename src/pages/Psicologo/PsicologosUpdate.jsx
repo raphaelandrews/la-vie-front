@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Card, TextInput, Label, Textarea } from "flowbite-react";
+import { Card, Label } from "flowbite-react";
 import axios from "axios";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -64,12 +64,12 @@ const PsicologosUpdate = () => {
               <div className="mb-2 block">
                 <Label htmlFor="nome" value="Nome" />
               </div>
-              <TextInput
+              <input
                 id="nome"
                 name="nome"
                 value={formik.values.nome}
                 placeholder={data.nome}
-                className="bg-transparent outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}
@@ -80,12 +80,12 @@ const PsicologosUpdate = () => {
               <div className="mb-2 block">
                 <Label htmlFor="apresentacao" value="Apresentação" />
               </div>
-              <Textarea
+              <input
                 id="apresentacao"
                 name="apresentacao"
                 value={formik.values.apresentacao}
                 placeholder={data.apresentacao}
-                className="bg-transparent dark:bg-white outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}
@@ -95,12 +95,12 @@ const PsicologosUpdate = () => {
               <div className="mb-2 block">
                 <Label htmlFor="email" value="Email" />
               </div>
-              <TextInput
+              <input
                 id="email"
                 name="email"
                 value={formik.values.email}
                 placeholder={data.email}
-                className="bg-transparent outline-none"
+                className="w-full rounded-lg py-1 px-2 dark:!text-black border-[1px] dark:border-purple"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={formik.isSubmitting}
