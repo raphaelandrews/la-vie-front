@@ -44,7 +44,7 @@ const NavbarComponent = (props) => {
         <Navbar.Link href="/dashboard" className="hover:!text-purple">
           Dashboard
         </Navbar.Link>
-        <Navbar.Link href="raphaelandrews.github.io/la-vie-api-docs/" className="hover:!text-purple">
+        <Navbar.Link href="https://raphaelandrews.github.io/la-vie-api-docs/" className="hover:!text-purple">
           Docs
         </Navbar.Link>
       </Navbar.Collapse>
