@@ -30,7 +30,7 @@
 <br />
 
 ## :bookmark_tabs: Docs
-[La Vie - API Docs](raphaelandrews.github.io/la-vie-api-docs/)
+[La Vie - API Docs](https://raphaelandrews.github.io/la-vie-api-docs/)
 
 <br />
 
